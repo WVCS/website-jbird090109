@@ -11,7 +11,7 @@
     </body>
   </html>
 
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -38,20 +38,21 @@
     }
 
     img {
-      width: 50%;
-      border-radius: 75%;
+      width: 30%; /* Reduced image size */
+      border-radius: 50%; /* Makes the image a circle */
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+      animation: glimmer 1.5s infinite alternate;
     }
 
     img:hover {
       transform: scale(1.1);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
     }
 
     img:active {
-      transform: scale(1.5);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+      transform: scale(1.2); /* Reduced active scale for smaller size */
+      box-shadow: 0 0 40px rgba(255, 215, 0, 1);
     }
 
     @keyframes float {
@@ -62,8 +63,28 @@
         transform: translateY(-20px);
       }
     }
+
+    @keyframes glimmer {
+      0% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+      }
+      25% {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+      }
+      50% {
+        box-shadow: 0 0 40px rgba(255, 215, 0, 1);
+      }
+      75% {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+      }
+      100% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Add your image here -->
+  <img src="your-image-path.png" alt="Glowing Image">
 </body>
 </html>
