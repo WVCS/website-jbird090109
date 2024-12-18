@@ -1,0 +1,88 @@
+<html>
+  <head>
+  </head>
+  <body> 
+    <center>
+    <h3> My Project</h3>
+    <center>
+    <iframe src="https://scratch.mit.edu/projects/1058803080/embed" allowtransparency="true" width="600" height="560" frameborder="0" scrolling="no" allowfullscreen></iframe>
+   </body> 
+    </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: linear-gradient(135deg, #fbe7c6, #e6b89c);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h3 {
+      color: #4b4b4b;
+      font-size: 4rem;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    img {
+      width: 30%; /* Reduced image size */
+      border-radius: 50%; /* Makes the image a circle */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+      animation: glimmer 1.5s infinite alternate;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+    }
+
+    img:active {
+      transform: scale(1.2); /* Reduced active scale for smaller size */
+      box-shadow: 0 0 40px rgba(255, 215, 0, 1);
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes glimmer {
+      0% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+      }
+      25% {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+      }
+      50% {
+        box-shadow: 0 0 40px rgba(255, 215, 0, 1);
+      }
+      75% {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+      }
+      100% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Add your image here -->
+  <img src="your-image-path.png" alt="Glowing Image">
+</body>
+</html>
