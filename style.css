@@ -1,162 +1,149 @@
-<style>
-    body {
-      background: linear-gradient(135deg, #fbe7c6, #e6b89c);
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      overflow: hidden;
-    }
+/* General Styles */
+body {
+  background: linear-gradient(135deg, #fbe7c6, #e6b89c);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
 
-    /* Title Animation */
-    h3 {
-      color: #4b4b4b;
-      font-size: 4rem;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-      animation: float 3s ease-in-out infinite;
-    }
+/* Title Animation */
+h3 {
+  color: #4b4b4b;
+  font-size: 4rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  animation: float 3s ease-in-out infinite;
+}
 
-    /* Navigation Menu */
-    nav {
-      position: absolute;
-      top: 20px;
-      display: flex;
-      gap: 20px;
-      background: rgba(255, 255, 255, 0.3);
-      padding: 10px 20px;
-      border-radius: 30px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
-    }
+/* Navigation Menu */
+ul {
+  position: absolute;
+  top: 20px;
+  display: flex;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
 
-    nav a {
-      text-decoration: none;
-      color: #333;
-      font-size: 1.2rem;
-      font-weight: bold;
-      position: relative;
-      padding: 10px 15px;
-      border-radius: 20px;
-      overflow: hidden;
-      background: linear-gradient(135deg, #ff7b00, #ffb703);
-      color: white;
-      box-shadow: 0 4px 10px rgba(255, 123, 0, 0.3);
-      transition: all 0.3s ease;
-    }
+ul {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ff7b00, #ffb703);
+  box-shadow: 0 4px 10px rgba(255, 123, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+}
 
-    nav a:hover {
-      color: #fff;
-      transform: scale(1.1);
-      box-shadow: 0 6px 15px rgba(255, 123, 0, 0.5);
-    }
+ul:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(255, 123, 0, 0.5);
+}
 
-    nav a:active {
-      transform: scale(1.2);
-      box-shadow: 0 8px 20px rgba(255, 123, 0, 0.6);
-    }
+ul:active {
+  transform: scale(1.2);
+  box-shadow: 0 8px 20px rgba(255, 123, 0, 0.6);
+}
 
-    nav a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 200%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
-      z-index: 1;
-      transition: transform 0.5s ease;
-    }
+ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  transition: transform 0.5s ease;
+}
 
-    nav a:hover::before {
-      transform: translateX(100%);
-    }
+ul:hover::before {
+  transform: translateX(100%);
+}
 
-    nav a span {
-      position: relative;
-      z-index: 2;
-    }
+ul {
+  position: relative;
+  z-index: 2;
+}
 
-    /* Image Animation */
-    img {
-      width: 20%;
-      border-radius: 50%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-      animation: glimmer 1.5s infinite alternate;
-    }
+/* Image Animation */
+img {
+  width: 50%;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  animation: glimmer 1.5s infinite alternate;
+}
 
-    img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
-    }
+img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+}
 
-    img:active {
-      transform: scale(1.2);
-      box-shadow: 0 0 40px rgba(255, 215, 0, 1);
-    }
+img:active {
+  transform: scale(1.2);
+  box-shadow: 0 0 40px rgba(255, 215, 0, 1);
+}
 
-    /* Button */
-    .btn {
-      background: #ffb703;
-      color: #fff;
-      font-size: 1rem;
-      font-weight: bold;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+/* Button */
+.btn {
+  background: #ffb703;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-    .btn:hover {
-      background: #ff9f1c;
-      transform: scale(1.1);
-    }
+.btn:hover {
+  background: #ff9f1c;
+  transform: scale(1.1);
+}
 
-    .btn:active {
-      background: #e76f51;
-      transform: scale(1.2);
-    }
+.btn:active {
+  background: #e76f51;
+  transform: scale(1.2);
+}
 
-    /* Animations */
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
-    }
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
 
-    @keyframes glimmer {
-      0% {
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-      }
-      25% {
-        box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
-      }
-      50% {
-        box-shadow: 0 0 40px rgba(255, 215, 0, 1);
-      }
-      75% {
-        box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
-      }
-      100% {
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-      }
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <a href="index.html"><span>Home</span></a>
-    <a href="appPage.html"><span>My Apps</span></a>
-  </nav>
- 
-</body>
-</html>
+@keyframes glimmer {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  }
+  25% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 215, 0, 1);
+  }
+  75% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  }
+}
