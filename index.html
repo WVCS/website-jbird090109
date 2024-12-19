@@ -1,7 +1,8 @@
 <html>
-  <head> <link rel = "stylesheet" href="style.css">
+  <head>
   </head>
   <body>
+
     <center>
     <h3> Joshua David's Website </h3>
       
@@ -11,14 +12,7 @@
     </body>
   </html>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joshua David's Website</title>
-  <style>
-    body {
+body {
       background: linear-gradient(135deg, #fbe7c6, #e6b89c);
       font-family: Arial, sans-serif;
       margin: 0;
@@ -29,6 +23,33 @@
       justify-content: center;
       height: 100vh;
       overflow: hidden;
+    }
+
+    /* Title Animation */
+    h3 {
+      color: #4b4b4b;
+      font-size: 4rem;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Image Animation */
+    img {
+      width: 50%; /* Reduced image size */
+      border-radius: 50%; /* Makes the image a circle */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+      animation: glimmer 1.5s infinite alternate;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+    }
+
+    img:active {
+      transform: scale(1.2);
+      box-shadow: 0 0 40px rgba(255, 215, 0, 1);
     }
 
     /* Navigation Menu */
@@ -62,34 +83,28 @@
       transform: scale(1.2);
     }
 
-    /* Title Styling */
-    h3 {
-      margin-top: 80px; /* Moves the title higher */
-      color: #4b4b4b;
-      font-size: 3rem;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-      animation: float 3s ease-in-out infinite;
+    /* Button */
+    .btn {
+      background: #ffb703;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    /* Image Styling */
-    img {
-      margin-top: 20px;
-      width: 250px; /* Fixed image size */
-      height: 250px;
-      border-radius: 50%; /* Circular image */
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-      animation: glimmer 1.5s infinite alternate;
-    }
-
-    img:hover {
+    .btn:hover {
+      background: #ff9f1c;
       transform: scale(1.1);
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
     }
 
-    img:active {
+    .btn:active {
+      background: #e76f51;
       transform: scale(1.2);
-      box-shadow: 0 0 40px rgba(255, 215, 0, 1);
     }
 
     /* Animations */
@@ -106,8 +121,14 @@
       0% {
         box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
       }
+      25% {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+      }
       50% {
         box-shadow: 0 0 40px rgba(255, 215, 0, 1);
+      }
+      75% {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
       }
       100% {
         box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
@@ -116,10 +137,18 @@
   </style>
 </head>
 <body>
- <nav>
+  <!-- Navigation Menu -->
+  <nav>
     <a href="index.html">Home</a>
     <a href="appPage.html">My Apps</a>
   </nav>
+
+
+
+
+ 
+</body>
+</html>
 
 </body>
 </html>
