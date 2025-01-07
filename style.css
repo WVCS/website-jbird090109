@@ -3,22 +3,26 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Navigation Menu */
 nav {
-  position: fixed; /* Make the nav bar fixed */
+  position: fixed; /* Fixed to stay on top */
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  width: auto; /* Auto width instead of full */
   display: flex;
-  justify-content: center;
   gap: 20px;
   background: rgba(255, 255, 255, 0.3);
-  padding: 15px 0;
+  padding: 15px 30px;
+  border-radius: 30px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
-  z-index: 1000; /* Ensure it stays above other content */
+  z-index: 1000; /* Stays above other elements */
 }
 
 nav a {
@@ -27,7 +31,7 @@ nav a {
   font-size: 1.2rem;
   font-weight: bold;
   position: relative;
-  padding: 10px 15px;
+  padding: 10px 20px;
   border-radius: 20px;
   overflow: hidden;
   background: linear-gradient(135deg, #ff7b00, #ffb703);
@@ -37,7 +41,6 @@ nav a {
 }
 
 nav a:hover {
-  color: #fff;
   transform: scale(1.1);
   box-shadow: 0 6px 15px rgba(255, 123, 0, 0.5);
 }
@@ -63,16 +66,16 @@ nav a:hover::before {
   transform: translateX(100%);
 }
 
-/* Title Animation */
+/* Title Styling */
 h3 {
-  color: #333; /* A darker shade to match the navbar */
-  font-size: 2.5rem; /* Smaller font size */
-  font-weight: bold; /* Bold font to complement the navbar */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  color: #333;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   animation: float 3s ease-in-out infinite;
-  margin-top: 100px; /* Add spacing below the navbar */
+  margin: 100px 0 20px; /* Adjust to center with spacing from nav */
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Matches modern style */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @keyframes float {
@@ -80,7 +83,7 @@ h3 {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px); /* Slightly reduced floating effect */
+    transform: translateY(-10px);
   }
 }
 
@@ -92,7 +95,7 @@ img {
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
   animation: glimmer 1.5s infinite alternate;
   display: block;
-  margin: 20px auto; /* Center the image */
+  margin: 0 auto;
 }
 
 img:hover {
