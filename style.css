@@ -3,33 +3,31 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* Navigation Menu */
 nav {
-  position: fixed; /* Keep the nav bar fixed at the top */
+  position: fixed; /* Make the nav bar fixed */
   top: 0;
   left: 0;
-  width: 100%; /* Stretch across the entire width */
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.3);
   padding: 15px 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
   z-index: 1000; /* Ensure it stays above other content */
-  display: flex;
-  justify-content: center; /* Center the navigation links */
-  gap: 30px; /* Add space between buttons */
 }
 
-/* Navigation Link Styling */
 nav a {
   text-decoration: none;
   color: #333;
   font-size: 1.2rem;
   font-weight: bold;
-  padding: 10px 20px;
+  position: relative;
+  padding: 10px 15px;
   border-radius: 20px;
   overflow: hidden;
   background: linear-gradient(135deg, #ff7b00, #ffb703);
@@ -39,27 +37,42 @@ nav a {
 }
 
 nav a:hover {
-  transform: scale(1.2); /* Make the button bigger */
-  background: white; /* Change background to white */
-  color: #333; /* Change text color to dark */
-  box-shadow: 0 6px 15px rgba(255, 123, 0, 0.5); /* Enhanced shadow */
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(255, 123, 0, 0.5);
 }
 
 nav a:active {
-  transform: scale(1.3); /* Increase the scale when clicked */
+  transform: scale(1.2);
   box-shadow: 0 8px 20px rgba(255, 123, 0, 0.6);
 }
 
-/* Title Styling */
+nav a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  z-index: 1;
+  transition: transform 0.5s ease;
+}
+
+nav a:hover::before {
+  transform: translateX(100%);
+}
+
+/* Title Animation */
 h3 {
-  color: #333;
-  font-size: 4rem; /* Larger font size */
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  color: #333; /* A darker shade to match the navbar */
+  font-size: 2.5rem; /* Smaller font size */
+  font-weight: bold; /* Bold font to complement the navbar */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
   animation: float 3s ease-in-out infinite;
-  margin-top: 120px; /* Increased margin to prevent overlap */
+  margin-top: 100px; /* Add spacing below the navbar */
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Matches modern style */
 }
 
 @keyframes float {
@@ -67,7 +80,7 @@ h3 {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-10px); /* Slightly reduced floating effect */
   }
 }
 
@@ -79,7 +92,7 @@ img {
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
   animation: glimmer 1.5s infinite alternate;
   display: block;
-  margin: 20px auto;
+  margin: 20px auto; /* Center the image */
 }
 
 img:hover {
